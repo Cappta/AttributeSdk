@@ -6,5 +6,9 @@ namespace AttributeSdk {
 		public static IEnumerable<(Type type, T attribute)> EnumerateTypesWithAttribute<T>(this AppDomain appDomain) where T : Attribute {
 			return appDomain.GetAssemblies().EnumerateTypesWithAttribute<T>();
 		}
+
+		public static IEnumerable<(Type type, T[] attributes)> EnumerateTypesWithAttributes<T>(this AppDomain appDomain) where T : Attribute {
+			return appDomain.GetAssemblies().EnumerateTypesWithAttributes<T>();
+		}
 	}
 }

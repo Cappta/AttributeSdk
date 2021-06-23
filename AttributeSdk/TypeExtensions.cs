@@ -6,7 +6,7 @@ namespace AttributeSdk {
 	public static class TypeExtensions {
 		public static T? GetAttribute<T>(this Type type) where T : Attribute
 			=> type.GetAttributes<T>()
-				.FirstOrDefault();
+				.SingleOrDefault();
 
 		public static IEnumerable<T> GetAttributes<T>(this Type type) where T : Attribute
 			=> type.GetCustomAttributes(typeof(T), true)
